@@ -3,15 +3,28 @@
 {% block content %}
 
     <div style="margin: 2rem; text-align: center">
-        <h1>METHOD</h1>
+        <h1 style="font-family: 'lobster', cursive;">
+            Hello World LIST!
+        </h1>
 
         <form action="/accounts/hello_world/" method="post">
             {% csrf_token %}
-            <input type="text" name="input">
-            <input type="submit" class="btn btn-dark rounded-pill px-5">
+            <div>
+                <input type="text" name="hello_world_input">
+            </div>
+            <div>
+                <input type="text" name="input">
+                <input type="submit" class="btn btn-dark rounded-pill px-5">
+            </div>
+
         </form>
 
-        <h3>{{ new_data.text }}</h3>
+        {% if hello_world_output %}
+        <h3>
+            {{ hello_world_output.text }}
+        </h3>
+        {% endif %}
+
     </div>
 
 {%  endblock %}
