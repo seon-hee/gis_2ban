@@ -13,16 +13,16 @@
                 <input type="text" name="hello_world_input">
             </div>
             <div>
-                <input type="text" name="input">
-                <input type="submit" class="btn btn-dark rounded-pill px-5">
+                <input type="submit" class="btn btn-dark rounded-pill px-5" value="POST">
             </div>
-
         </form>
 
-        {% if hello_world_output %}
-        <h3>
-            {{ hello_world_output.text }}
-        </h3>
+        {% if hello_world_list %}
+            {% for hello_world in hello_world_list %}
+            <h4>
+                {{ hello_world.text }}
+            </h4>
+            {%  endfor %}
         {% endif %}
 
     </div>
