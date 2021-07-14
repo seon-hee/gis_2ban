@@ -1,11 +1,7 @@
-from django.urls import path
-
-from accountapp.views import hello_world, AccountCreateView
-
-app_name = 'accountapp'
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('hello_world/', hello_world, name='hello_world'),
-
-    path('create/', AccountCreateView.as_view(), name='create')
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accountapp.urls'))
 ]
