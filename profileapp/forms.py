@@ -1,9 +1,9 @@
-from bs4.diagnose import profile
+from profileapp.models import Profile
 
 from django.forms import ModelForm
 
 
 class ProfileCreationForm(ModelForm):
     class Meta:
-        model = profile
+        model = Profile
         fields = ['image', 'nickname', 'message']
