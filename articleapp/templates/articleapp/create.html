@@ -9,7 +9,7 @@
             <h4>Create Article</h4>
         </div>
         <div>
-            <form action="{% url 'articleapp:create' pk=target_article.pk %}"
+            <form action="{% url 'articleapp:create' %}"
                   method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
