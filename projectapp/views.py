@@ -21,6 +21,7 @@ class ProjectCreateView(CreateView):
     def get_success_url(self):
         return reverse('projectapp:detail', kwargs={'pk':self.object.pk})
 
+
 class ProjectDetailView(DetailView, MultipleObjectMixin):
     model = Project
     context_object_name = 'target_project'
@@ -29,8 +30,10 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
     paginate_by = 20
 
     def get_context_data(self, **kwargs):
-        article_list = Article.objects.filter()
-        return super().get_context_data(**kwargs)
+        article_list = Article.objects.filter(project=self.object)
+        return super().get_context_data(object_list=article_list,
+                                        **kwargs)
+
 
 class ProjectListView(ListView):
     model = Project
