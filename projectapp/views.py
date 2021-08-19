@@ -11,6 +11,7 @@ from articleapp.models import Article
 from projectapp.forms import ProjectCreationForm
 from projectapp.models import Project
 
+
 @method_decorator(login_required, 'get')
 @method_decorator(login_required, 'post')
 class ProjectCreateView(CreateView):
