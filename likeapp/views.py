@@ -29,7 +29,7 @@ class LikeArticleView(RedirectView):
             LikeRecord(user=user, article=article).save()
             article.like += 1
             article.save()
-            # 조하요 반영 O
+            # 좋아요 반영 O
             messages.add_message(request, messages.SUCCESS, '좋아요가 반영되었습니다.')
 
         return super().get(request, *args, **kwargs)
