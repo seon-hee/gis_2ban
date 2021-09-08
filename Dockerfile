@@ -14,6 +14,8 @@ RUN pip install gunicorn
 
 RUN python manage.py migrate
 
+RUN python manage.py collectstatic
+
 EXPOSE 8000
 
 CMD ["gunicorn", "gis_2ban.wsgi", "--bind", "0.0.0.0:8000"]
