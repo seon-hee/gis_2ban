@@ -21,8 +21,8 @@ services:
       - gis_static:/home/gis_2ban/staticfiles/
 
 networks:
-  gis_2bna_network
+  gis_2ban_network:
 
 volumes:
-  gis_2ban_media:
-  gis_2ban_static:
+  gis_media:
+  gis_static:
