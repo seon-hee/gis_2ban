@@ -10,10 +10,10 @@ services:
       - gis_static:/data/static/
       - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
     ports:
-    - 80:80
+      - 80:80
 
   django:
-    image: gis_test_image:4
+    image: gis_image_test:4
     networks:
       - gis_2ban_network
     volumes:
