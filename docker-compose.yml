@@ -36,9 +36,9 @@ services:
       - MARIADB_ROOT_PASSWORD
     environment:
       MARIADB_DATABASE: django
-      MARIADB_USER: django
-      MARIADB_PASSWORD: qwer1
-      MARIADB_ROOT_PASSWORD: qwer1
+      MARIADB_USER_FILE: /run/secrets/MARIADB_USER
+      MARIADB_PASSWORD_FILE: /run/secrets/MARIADB_PASSWORD
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
 
 
 networks:
