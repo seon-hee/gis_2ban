@@ -16,6 +16,8 @@ services:
     image: gis_image_test:4
     networks:
       - gis_2ban_network
+    secrets:
+      - DJANGO_SECRET_KEY
     volumes:
       - gis_media:/home/gis_2ban/media/
       - gis_static:/home/gis_2ban/staticfiles/
@@ -40,3 +42,7 @@ volumes:
   gis_media:
   gis_static:
   gis_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
