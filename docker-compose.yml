@@ -58,4 +58,3 @@ secrets:
     external: true
   MARIADB_ROOT_PASSWORD:
     external: true
-    
